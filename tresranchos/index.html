@@ -1,0 +1,349 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style><script src="../marca.js"></script><script src="dados.js"></script></head><body><title>Portal Condomínio Residencial Três Ranchos</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: cabeçalho branco com a marca em destaque (como o papel timbrado), faixa ouro/verde,
+   seletor de mês, resumo, painel de categorias + contas, histórico em largura total. */
+:root{
+  --bg:#f4f5f1; --surface:#ffffff; --ink:#18210f; --muted:#5d6655; --line:#e1e4da; --line-strong:#c9cebf;
+  --green:#385724; --green-2:#4e7a33; --green-soft:#e6eedd;
+  --gold:#bf9000; --gold-2:#d9a90f; --gold-soft:#f7edcf;
+  --warn:#94570a; --warn-bg:#fcefd6;
+  --display:"Archivo", "Arial Narrow", "Segoe UI", sans-serif;
+  --body:"Public Sans", "Segoe UI", Roboto, Arial, sans-serif;
+  --shadow:0 1px 2px rgba(24,33,15,.05), 0 6px 20px rgba(24,33,15,.05);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11160e; --surface:#192015; --ink:#eef1e8; --muted:#a4ad9a; --line:#2a3324; --line-strong:#3b4733;
+  --green:#86b960; --green-2:#a3d07f; --green-soft:#223019;
+  --gold:#e2b23a; --gold-2:#f0c75c; --gold-soft:#342a10;
+  --warn:#f1b55a; --warn-bg:#382a10; --shadow:none; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11160e; --surface:#192015; --ink:#eef1e8; --muted:#a4ad9a; --line:#2a3324; --line-strong:#3b4733;
+  --green:#86b960; --green-2:#a3d07f; --green-soft:#223019;
+  --gold:#e2b23a; --gold-2:#f0c75c; --gold-soft:#342a10;
+  --warn:#f1b55a; --warn-bg:#382a10; --shadow:none; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-stretch:88%;margin:0;text-wrap:balance;letter-spacing:-.01em}
+.n{font-variant-numeric:tabular-nums lining-nums;white-space:nowrap}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:6px}
+
+/* ---------- cabeçalho da marca (sempre claro, como o timbrado) ---------- */
+.masthead{background:#fff;color:#18210f;position:relative}
+.masthead::before{content:"";display:block;height:10px;background:linear-gradient(105deg,#bf9000 0 58%,#7f6000 58% 60%,#385724 60% 100%)}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px 28px;flex-wrap:wrap;padding-block:18px 20px}
+.masthead img{height:88px;width:auto;display:block}
+.mh-right{display:grid;justify-items:end;gap:2px;text-align:right}
+.mh-right .k{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#7f6000;font-weight:600}
+.mh-right .c{font-family:var(--display);font-stretch:85%;font-weight:700;font-size:clamp(20px,2.6vw,28px);color:#385724;line-height:1.1}
+.masthead::after{content:"";display:block;height:4px;background:#385724}
+@media (max-width:620px){.masthead img{height:70px}.mh-right{justify-items:start;text-align:left}}
+
+/* ---------- seletor de mês ---------- */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+.months{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:var(--surface);border-bottom:1px solid var(--line)}
+.months .wrap{display:flex;align-items:center;gap:10px;padding-block:10px;flex-wrap:wrap}
+.months label{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:600}
+.sel{position:relative;display:flex;align-items:center}
+.sel select{appearance:none;-webkit-appearance:none;font:inherit;font-weight:600;font-size:15px;color:var(--ink);background:var(--bg);border:1px solid var(--line-strong);border-radius:10px;padding:8px 40px 8px 14px;min-width:220px;max-width:100%;cursor:pointer}
+.sel select:hover{border-color:var(--green)}
+.sel::after{content:"";position:absolute;right:16px;top:50%;width:8px;height:8px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:translateY(-70%) rotate(45deg);pointer-events:none}
+.nav{width:38px;height:38px;border-radius:10px;border:1px solid var(--line-strong);background:var(--bg);cursor:pointer;display:grid;place-items:center}
+.nav:hover:not(:disabled){border-color:var(--green)}
+.nav:disabled{opacity:.35;cursor:default}
+.nav svg{width:16px;height:16px}
+.months .hint{font-size:12.5px;color:var(--muted);margin-left:auto}
+@media (max-width:620px){.months .hint{display:none}.sel{flex:1}.sel select{min-width:0;width:100%}}
+
+/* ---------- resumo ---------- */
+main .wrap{display:grid;gap:24px;padding-block:28px 48px}
+.intro{display:grid;gap:8px}
+.intro .k{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.intro h1{font-size:clamp(26px,4vw,38px);font-weight:750;line-height:1.08}
+.lead{font-size:clamp(16px,1.9vw,18.5px);color:var(--muted);max-width:66ch;margin:0}
+.lead strong{color:var(--ink);font-weight:600}
+.lead .down{color:var(--warn);font-weight:600}.lead .up{color:var(--green);font-weight:600}
+
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:grid;gap:4px;min-width:0;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.kpi::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--line-strong)}
+.kpi.in::before{background:var(--green)} .kpi.out::before{background:var(--gold)} .kpi.end::before{background:var(--ink)}
+.kpi span{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.kpi b{font-family:var(--display);font-stretch:90%;font-weight:700;font-size:clamp(20px,2.4vw,27px);line-height:1.15}
+.kpi em{font-style:normal;font-size:12.5px;color:var(--muted)}
+@media (max-width:760px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.notice{display:flex;gap:10px;background:var(--warn-bg);border-radius:10px;padding:10px 14px;font-size:14px}
+.notice b{color:var(--warn);flex:0 0 auto}
+
+/* ---------- painéis ---------- */
+.grid2{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:24px;align-items:start}
+@media (max-width:880px){.grid2{grid-template-columns:minmax(0,1fr)}}
+.col{display:grid;gap:24px;min-width:0}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);min-width:0}
+.panel>header{padding:18px 20px 0;display:grid;gap:2px}
+.panel h2{font-size:19px;font-weight:700}
+.panel .sub{color:var(--muted);font-size:13.5px;margin:0}
+.panel .body{padding:16px 20px 20px;display:grid;gap:16px}
+
+/* composição em barra única + legenda */
+.stack{display:flex;height:14px;border-radius:7px;overflow:hidden;gap:2px;background:var(--line)}
+.stack i{display:block;height:100%}
+.cats{display:grid;gap:0}
+details.cat{border-top:1px solid var(--line)}
+details.cat summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;align-items:center;gap:10px;padding:11px 0}
+details.cat summary::-webkit-details-marker{display:none}
+.dot{width:10px;height:10px;border-radius:3px}
+.cat .nm{font-weight:600;min-width:0;overflow-wrap:anywhere}
+@media (max-width:520px){.cat .pc{display:none}.cat .vl{min-width:0}}
+.cat .pc{font-size:12.5px;color:var(--muted);width:3.2em;text-align:right}
+.cat .vl{font-weight:600;text-align:right;min-width:7.5em}
+.cat .chev{width:8px;height:8px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);margin:0 2px 3px 4px;transition:transform .15s}
+details.cat[open] .chev{transform:rotate(-135deg);margin-bottom:-3px}
+details.cat summary{grid-template-columns:auto minmax(0,1fr) auto auto auto}
+.items{list-style:none;margin:0 0 12px;padding:0 0 0 20px;display:grid;gap:7px}
+.items li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;font-size:14px;color:var(--ink)}
+.items li .d{min-width:0;overflow-wrap:anywhere}
+.tag{display:inline-block;font-size:11px;font-weight:600;border-radius:5px;padding:1px 7px;margin-left:6px;vertical-align:1px;background:var(--warn-bg);color:var(--warn);white-space:nowrap}
+
+/* contas */
+.acc{display:grid;gap:4px;padding:14px 16px;border:1px solid var(--line);border-radius:10px}
+.acc header{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:4px}
+.acc h3{font-size:15.5px;font-weight:700}
+.acc header .n{font-family:var(--display);font-stretch:90%;font-weight:700;font-size:19px}
+.acc dl{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:3px 12px;margin:0;font-size:14px}
+.acc dt{color:var(--muted)} .acc dd{margin:0;text-align:right}
+.acc .pos{color:var(--green)} .acc .neg{color:var(--warn)}
+
+.docs{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:10px;padding:10px 16px;font-weight:600;text-decoration:none;background:var(--green);color:var(--surface);border:0}
+.btn[role="note"]{cursor:default}
+.pendnote{margin:0;font-size:13.5px;color:var(--muted);background:var(--warn-bg);border-radius:10px;padding:10px 12px;flex-basis:100%}
+.pendnote b{color:var(--warn)}
+.btn svg{width:16px;height:16px}
+.okpill{font-size:12.5px;font-weight:600;color:var(--green);background:var(--green-soft);border-radius:6px;padding:3px 9px}
+
+/* histórico */
+.chartwrap{position:relative;overflow-x:auto}
+.chartwrap svg{display:block;width:100%;min-width:620px;height:auto}
+.chartwrap text{font-family:var(--body);font-size:11.5px;fill:var(--muted)}
+.chartwrap .hit{cursor:pointer}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--bg);border-radius:8px;padding:8px 10px;font-size:12.5px;line-height:1.45;box-shadow:0 6px 18px rgba(0,0,0,.18);transform:translate(-50%,-100%);white-space:nowrap}
+.tip b{display:block;font-size:12px;text-transform:capitalize}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--muted)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-2px}
+.legend i.ln{height:3px;border-radius:2px;vertical-align:3px}
+
+footer.foot{background:#fff;color:#4a5342;border-top:4px solid #385724}
+footer.foot .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;padding-block:18px 24px;font-size:13px}
+footer.foot img{height:44px;display:block}
+footer.foot b{color:#18210f}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="masthead"><div class="wrap">
+  <img alt="ContaCerta Contabilidade e Assessoria">
+  <div class="mh-right"><span class="k">Portal de transparência</span><span class="c">Condomínio Residencial Três Ranchos</span></div>
+</div></div>
+
+<nav class="months" aria-label="Mês da prestação de contas"><div class="wrap">
+  <label for="mes">Mês</label>
+  <button class="nav" type="button" id="ant" aria-label="Mês anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+  <div class="sel"><select id="mes"></select></div>
+  <button class="nav" type="button" id="prox" aria-label="Próximo mês"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+  <span class="hint" id="hint"></span>
+</div></nav>
+
+<main><div class="wrap">
+  <div class="intro">
+    <span class="k" id="k-mes"></span>
+    <h1 id="titulo"></h1>
+    <p class="lead" id="lead"></p>
+  </div>
+  <div id="aviso"></div>
+  <div class="kpis" id="kpis"></div>
+
+  <div class="grid2">
+    <section class="panel" aria-labelledby="h-desp">
+      <header><h2 id="h-desp">Para onde foi o dinheiro</h2><p class="sub" id="desp-sub"></p></header>
+      <div class="body"><div class="stack" id="stack" aria-hidden="true"></div><div class="cats" id="cats"></div></div>
+    </section>
+    <div class="col">
+      <section class="panel" aria-labelledby="h-contas">
+        <header><h2 id="h-contas">Saldo das contas</h2><p class="sub">Movimento de cada conta bancária no mês</p></header>
+        <div class="body" id="contas"></div>
+      </section>
+      <section class="panel" aria-labelledby="h-docs">
+        <header><h2 id="h-docs">Prestação de contas completa</h2><p class="sub" id="docs-sub"></p></header>
+        <div class="body"><div class="docs" id="docs"></div></div>
+      </section>
+    </div>
+  </div>
+
+  <section class="panel" aria-labelledby="h-hist">
+    <header><h2 id="h-hist">Histórico mensal</h2><p class="sub">Passe o dedo ou o mouse sobre um mês para ver os valores e toque para abrir o detalhe</p></header>
+    <div class="body">
+      <div class="legend"><span><i style="background:var(--green)"></i>Entradas</span><span><i style="background:var(--gold)"></i>Saídas</span><span><i class="ln" style="background:var(--ink)"></i>Saldo no fim do mês</span></div>
+      <div class="chartwrap" id="chartwrap"><svg id="chart" viewBox="0 0 760 300" role="img" aria-label="Histórico de entradas, saídas e saldo"></svg><div class="tip" id="tip" hidden></div></div>
+    </div>
+  </section>
+</div></main>
+
+<footer class="foot"><div class="wrap">
+  <img id="logo2" alt="ContaCerta">
+  <span>Balancetes elaborados por <b>ContaCerta Contabilidade</b><br>Gabriela Oliveira Camilo · CRC/GO 027299/O-0</span>
+  <span>Dúvidas sobre a prestação de contas<br><b>(62) 98179-3825</b> · @contacerta.contabilidade</span>
+</div></footer>
+
+<script>
+document.querySelector(".masthead img").src=window.LOGO_SRC;document.getElementById("logo2").src=window.LOGO_SRC;
+const DADOS = window.DADOS;
+const PDFS = window.PDFS;
+const PREVIA = false;
+const MESES=["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
+const ABR=["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
+const CORES=["#385724","#bf9000","#6f8f4e","#8a6a12","#a9bd8f","#d8b75a","#4a5342","#c9cebf"];
+const brl=v=>v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
+const nice=d=>{const t=d.toLowerCase();return t.charAt(0).toUpperCase()+t.slice(1)};
+const grupoNome=t=>cap(t.replace(/^DESPESAS (COM )?/,"").toLowerCase().replace(" e encargos sociais"," e encargos"));
+
+const porId=Object.fromEntries(DADOS.map(m=>[m.id,m]));
+const timeline=[];
+{let m=DADOS[0].mes,a=DADOS[0].ano;const l=DADOS[DADOS.length-1];
+ while(a<l.ano||(a===l.ano&&m<=l.mes)){const id=String(m).padStart(2,"0")+a;timeline.push({id,mes:m,ano:a,d:porId[id]||null});if(++m>12){m=1;a++}}}
+DADOS.forEach(m=>{
+  const g={};m.grupos.forEach(x=>{(g[x.t]=g[x.t]||{t:x.t,total:0,itens:[]});g[x.t].total+=x.total;g[x.t].itens.push(...x.itens)});
+  m.g=Object.values(g);m.ini=m.ant_cc+m.ant_fr;m.fim=m.fin_cc+m.fin_fr;
+  m.pend=[...m.g.flatMap(x=>x.itens),...m.fr_despesas].filter(i=>i.p).length;
+  m.nitens=m.g.reduce((s,x)=>s+x.itens.length,0)+m.fr_despesas.length;
+});
+
+function render(id){
+  const m=porId[id];
+  document.getElementById("mes").value=id;
+  const k=DADOS.findIndex(x=>x.id===id);
+  document.getElementById("ant").disabled=k<=0;
+  document.getElementById("prox").disabled=k>=DADOS.length-1;
+  const nome=`${MESES[m.mes-1]} de ${m.ano}`;
+  document.getElementById("k-mes").textContent="Prestação de contas";
+  document.getElementById("titulo").textContent=cap(nome);
+  const dif=m.fim-m.ini;
+  document.getElementById("lead").innerHTML=`O condomínio recebeu <strong>${brl(m.rec)}</strong> e pagou <strong>${brl(m.desp)}</strong> em despesas. O dinheiro em caixa ${dif>=0?'<span class="up">aumentou</span>':'<span class="down">diminuiu</span>'} <strong>${brl(Math.abs(dif))}</strong> e fechou o mês em <strong>${brl(m.fim)}</strong>.`;
+
+  const i=timeline.findIndex(t=>t.id===id), prev=timeline[i-1];
+  let av="";
+  if(prev&&!prev.d) av=`<div class="notice"><b>Aviso</b><span>A prestação de contas de ${MESES[prev.mes-1]} de ${prev.ano} ainda não foi publicada.</span></div>`;
+  else if(prev&&Math.abs(prev.d.fim-m.ini)>0.009) av=`<div class="notice"><b>Em conferência</b><span>O saldo inicial deste mês difere em ${brl(Math.abs(prev.d.fim-m.ini))} do saldo final do mês anterior. A contabilidade está verificando.</span></div>`;
+  document.getElementById("aviso").innerHTML=av;
+
+  document.getElementById("kpis").innerHTML=[
+    ["","Saldo inicial",m.ini,"em caixa no início do mês"],["in","Entradas",m.rec,"taxas condominiais e outras"],
+    ["out","Saídas",m.desp,`${m.nitens} pagamentos`],["end","Saldo final",m.fim,"conta corrente + fundo de reserva"]
+  ].map(k=>`<div class="kpi ${k[0]}"><span>${k[1]}</span><b class="n">${brl(k[2])}</b><em>${k[3]}</em></div>`).join("");
+
+  const cats=m.g.map(x=>({t:grupoNome(x.t),total:x.total,itens:x.itens}));
+  if(m.fr_despesas.length) cats.push({t:"Pagas pelo fundo de reserva",total:m.fr_despesas.reduce((s,x)=>s+x.v,0),itens:m.fr_despesas});
+  cats.sort((a,b)=>b.total-a.total);
+  cats.forEach((c,k)=>c.cor=CORES[k%CORES.length]);
+  document.getElementById("desp-sub").textContent=`${brl(m.desp)} divididos em ${cats.length} categorias. Toque em uma categoria para ver cada pagamento.`;
+  document.getElementById("stack").innerHTML=cats.map(c=>`<i style="flex:${c.total};background:${c.cor}" title="${esc(c.t)}"></i>`).join("");
+  document.getElementById("cats").innerHTML=cats.map(c=>`<details class="cat"><summary><span class="dot" style="background:${c.cor}"></span><span class="nm">${esc(c.t)}</span><span class="pc n">${(c.total/m.desp*100).toFixed(0)}%</span><span class="vl n">${brl(c.total)}</span><span class="chev"></span></summary><ul class="items">${
+    c.itens.map(x=>`<li><span class="d">${esc(nice(x.d))}${x.p?`<span class="tag">${x.p.includes("ASSIN")?"aguardando assinatura":"comprovante pendente"}</span>`:""}</span><span class="n">${brl(x.v)}</span></li>`).join("")}</ul></details>`).join("");
+
+  const pg=m.g.reduce((s,x)=>s+x.total,0), frd=m.fr_despesas.reduce((s,x)=>s+x.v,0);
+  document.getElementById("contas").innerHTML=
+   `<div class="acc"><header><h3>Conta corrente</h3><span class="n">${brl(m.fin_cc)}</span></header><dl>
+     <dt>Saldo inicial</dt><dd class="n">${brl(m.ant_cc)}</dd>
+     <dt>Entradas</dt><dd class="n pos">+ ${brl(m.rec)}</dd>
+     <dt>Pagamentos</dt><dd class="n neg">− ${brl(pg)}</dd>
+     ${m.aplicacao?`<dt>Guardado no fundo de reserva</dt><dd class="n neg">− ${brl(m.aplicacao)}</dd>`:""}</dl></div>
+    <div class="acc"><header><h3>Fundo de reserva</h3><span class="n">${brl(m.fin_fr)}</span></header><dl>
+     <dt>Saldo inicial</dt><dd class="n">${brl(m.ant_fr)}</dd>
+     ${m.aplicacao?`<dt>Depósito do mês</dt><dd class="n pos">+ ${brl(m.aplicacao)}</dd>`:""}
+     ${frd?`<dt>Usado em pagamentos</dt><dd class="n neg">− ${brl(frd)}</dd>`:""}</dl></div>`;
+
+  document.getElementById("docs-sub").textContent=`Balancete assinado, extratos bancários, notas fiscais e recibos de ${nome}`;
+  const pdf=PDFS[id];
+  const ico=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>`;
+  const pendTxt=m.pend?`<p class="pendnote"><b>${m.pend} ${m.pend>1?"comprovantes ainda não foram entregues":"comprovante ainda não foi entregue"}</b> e ${m.pend>1?"aparecem como pendentes":"aparece como pendente"} na lista de despesas. A prestação já pode ser baixada e será atualizada quando ${m.pend>1?"eles chegarem":"ele chegar"}.</p>`:`<span class="okpill">Todos os comprovantes entregues</span>`;
+  let botao;
+  if(pdf) botao=`<a class="btn" href="${pdf}" target="_blank" rel="noopener">${ico}Baixar prestação de contas (PDF)</a>`;
+  else if(PREVIA) botao=`<span class="btn" role="note">${ico}Baixar prestação de contas (PDF)</span><span class="sub" style="font-size:12.5px">Prévia. No site publicado este botão abre o PDF.</span>`;
+  else botao=`<span class="sub">O PDF deste mês ainda não foi publicado no portal.</span>`;
+  document.getElementById("docs").innerHTML=botao+pendTxt;
+  chart(id);
+}
+
+function chart(sel){
+  const svg=document.getElementById("chart"),W=760,H=300,L=64,R=16,T=18,B=36,n=timeline.length,cw=(W-L-R)/n;
+  const css=getComputedStyle(document.documentElement),v=k=>css.getPropertyValue(k).trim();
+  const max=Math.max(...timeline.flatMap(t=>t.d?[t.d.rec,t.d.desp,t.d.fim]:[]));
+  const step=max>20000?5000:2000, top=Math.ceil(max/step)*step;
+  const y=x=>T+(H-T-B)*(1-x/top);
+  let s=`<defs><linearGradient id="ga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${v("--ink")}" stop-opacity=".14"/><stop offset="1" stop-color="${v("--ink")}" stop-opacity="0"/></linearGradient></defs>`;
+  for(let g=0;g<=top;g+=step) s+=`<line x1="${L}" x2="${W-R}" y1="${y(g)}" y2="${y(g)}" stroke="${v("--line")}" ${g?'stroke-dasharray="2 4"':''}/><text x="${L-10}" y="${y(g)+4}" text-anchor="end">${g?"R$ "+(g/1000).toLocaleString("pt-BR")+" mil":"R$ 0"}</text>`;
+  const bw=Math.min(13,cw*.28),pts=[];
+  timeline.forEach((t,i)=>{
+    const cx=L+cw*i+cw/2;
+    if(t.id===sel) s+=`<rect x="${L+cw*i+2}" y="${T-6}" width="${cw-4}" height="${H-T-B+10}" rx="8" fill="${v("--green-soft")}"/>`;
+    if(t.d){
+      s+=`<path d="M${cx-bw-1.5},${y(0)}V${y(t.d.rec)+3}q0,-3 3,-3h${bw-6}q3,0 3,3V${y(0)}Z" fill="${v("--green")}"/>`;
+      s+=`<path d="M${cx+1.5},${y(0)}V${y(t.d.desp)+3}q0,-3 3,-3h${bw-6}q3,0 3,3V${y(0)}Z" fill="${v("--gold")}"/>`;
+      pts.push({x:cx,y:y(t.d.fim),id:t.id});
+    } else {
+      s+=`<rect x="${cx-bw-1.5}" y="${y(0)-46}" width="${bw*2+3}" height="46" rx="3" fill="none" stroke="${v("--line-strong")}" stroke-dasharray="3 3"/>`;
+      pts.push(null);
+    }
+    s+=`<text x="${cx}" y="${H-12}" text-anchor="middle" ${t.id===sel?`style="fill:${v("--ink")};font-weight:700"`:""}>${ABR[t.mes-1]}/${String(t.ano).slice(2)}</text>`;
+  });
+  // linha e área do saldo (quebra nos meses sem dados)
+  const segs=[];let cur=[];pts.forEach(p=>{if(p)cur.push(p);else{if(cur.length)segs.push(cur);cur=[]}});if(cur.length)segs.push(cur);
+  segs.forEach(sg=>{
+    const d=sg.map((p,k)=>(k?"L":"M")+p.x.toFixed(1)+","+p.y.toFixed(1)).join("");
+    if(sg.length>1) s+=`<path d="${d}L${sg[sg.length-1].x},${y(0)}L${sg[0].x},${y(0)}Z" fill="url(#ga)"/>`;
+    s+=`<path d="${d}" fill="none" stroke="${v("--ink")}" stroke-width="2.2" stroke-linejoin="round"/>`;
+  });
+  pts.forEach(p=>{if(p)s+=`<circle cx="${p.x}" cy="${p.y}" r="${p.id===sel?5.5:3.5}" fill="${p.id===sel?v("--ink"):v("--surface")}" stroke="${v("--ink")}" stroke-width="2"/>`});
+  timeline.forEach((t,i)=>{s+=`<rect class="hit" x="${L+cw*i}" y="0" width="${cw}" height="${H}" fill="transparent" data-i="${i}"/>`});
+  svg.innerHTML=s;
+  const wrap=document.getElementById("chartwrap"); wrap.scrollLeft=wrap.scrollWidth;
+}
+const tip=document.getElementById("tip");
+function showTip(e){
+  const r=e.target.closest(".hit"); if(!r){tip.hidden=true;return}
+  const t=timeline[+r.dataset.i]; const wrap=document.getElementById("chartwrap");
+  const box=wrap.getBoundingClientRect(), rb=r.getBoundingClientRect();
+  tip.innerHTML=t.d?`<b>${MESES[t.mes-1]} ${t.ano}</b>Entradas ${brl(t.d.rec)}<br>Saídas ${brl(t.d.desp)}<br>Saldo final ${brl(t.d.fim)}`:`<b>${MESES[t.mes-1]} ${t.ano}</b>Não publicado`;
+  tip.hidden=false;
+  const x=Math.min(Math.max(rb.left-box.left+wrap.scrollLeft+rb.width/2,80),wrap.scrollWidth-80);
+  tip.style.left=x+"px"; tip.style.top="16px"; tip.style.transform="translate(-50%,0)";
+}
+const svgEl=document.getElementById("chart");
+svgEl.addEventListener("mousemove",showTip);
+svgEl.addEventListener("mouseleave",()=>tip.hidden=true);
+svgEl.addEventListener("click",e=>{const r=e.target.closest(".hit");if(!r)return;const t=timeline[+r.dataset.i];if(t.d)location.hash=t.id;else showTip(e)});
+
+{const anos=[...new Set(timeline.map(t=>t.ano))].reverse();
+ document.getElementById("mes").innerHTML=anos.map(a=>`<optgroup label="${a}">${timeline.filter(t=>t.ano===a).reverse().map(t=>
+   `<option value="${t.id}"${t.d?"":" disabled"}>${cap(MESES[t.mes-1])} de ${t.ano}${t.d?"":" (não publicado)"}</option>`).join("")}</optgroup>`).join("");
+ document.getElementById("hint").textContent=`${DADOS.length} meses publicados`;}
+document.getElementById("mes").addEventListener("change",e=>{location.hash=e.target.value});
+const passo=d=>{const k=DADOS.findIndex(x=>x.id===atual())+d;if(DADOS[k])location.hash=DADOS[k].id};
+document.getElementById("ant").addEventListener("click",()=>passo(-1));
+document.getElementById("prox").addEventListener("click",()=>passo(1));
+const atual=()=>porId[location.hash.slice(1)]?location.hash.slice(1):DADOS[DADOS.length-1].id;
+addEventListener("hashchange",()=>render(atual()));
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change",()=>render(atual()));
+new MutationObserver(()=>render(atual())).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+render(atual());
+</script>
+</body></html>
