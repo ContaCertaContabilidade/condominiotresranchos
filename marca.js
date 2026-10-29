@@ -1,1 +1,1 @@
-window.LOGO_SRC="/logo.png";
+window.LOGO_SRC="/LOGO%20ORIGINAL%20-%20SEM%20FUNDO%20(1).png";
